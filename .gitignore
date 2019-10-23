@@ -1,5 +1,6 @@
 # Build and Release Folders
 pool/*
+!pool/TEST
 
 # Other files and folders
 
