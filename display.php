@@ -26,6 +26,11 @@ if($_GET['action'] == 'delete'){
 			transition-duration:0.3s;
 			box-shadow: 0px 16px 32px 0px rgba(0,0,0,0.4);
 		}
+		code:active
+		{
+			transition-duration:0.4s;
+			box-shadow: 0px 32px 64px 0px rgba(0,0,0,0.4);
+		}
 		pre
 		{
 			white-space: pre-wrap;
