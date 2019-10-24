@@ -29,7 +29,7 @@ if($_GET['action'] == 'delete'){
 		pre
 		{
 			white-space: pre-wrap;
-word-wrap: break-word;
+			word-wrap: break-word;
 		}
 		code
 		{
