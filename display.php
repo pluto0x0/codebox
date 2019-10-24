@@ -21,15 +21,41 @@ if($_GET['action'] == 'delete'){
 		hljs.initHighlightingOnLoad();
 		</script>
 		<style>
+		code:hover
+		{
+			transition-duration:0.3s;
+			box-shadow: 0px 16px 32px 0px rgba(0,0,0,0.4);
+		}
 		code
 		{
+			transition-duration:0.2s;
 			border-radius:10px;
 			box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.4);
 			position:absolute;
 			left:5%;
 			top:5%;
 		}
-		button{ box-shadow: -10px 10px 16px 4px rgba(0,0,0,0.3); }
+		button
+		{
+			transition-duration:0.3s;
+			background-color: white;
+			border: 2px solid #4CAF50; /* Green */
+			border-radius: 4px;
+			color: white;
+			padding: 12px 16px;
+			text-align: center;
+			text-decoration: none;
+			display: inline-block;
+			font-size: 16px;
+			box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2), 0 3px 10px 0 rgba(0,0,0,0.19);
+			
+		}
+		button:hover{
+			transition-duration:0.3s;
+			box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+			background-color: #4CAF50; /* Green */
+			color: white;
+		}
 		@font-face
 		{
 			font-family:"Consola";
@@ -49,7 +75,7 @@ if($_GET['action'] == 'delete'){
 		#home
 		{
 			position:fixed;
-			top:94px;
+			top:124px;
 			right:15px;
 		}
 		footer
