@@ -11,7 +11,13 @@ if($_GET['action'] == 'delete'){
 	<head>
 		<link rel="icon" href="favicon.ico" type="image/x-icon"/>
 		<title>Code View - <?php echo $_GET['filename'];?></title>
-		<link rel="stylesheet" href="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@9.15.10/build/styles/default.min.css"/>
+		<!--- 
+		Railscasts
+		Solarized Light
+		Tomorrow Night Eighties
+		--->
+		<link rel="stylesheet" href="https://cdn.staticfile.org/font-awesome/4.7.0/css/font-awesome.css">
+		<link id="style" rel="stylesheet" href="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@9.15.10/build/styles/solarized-light.min.css"/>
 		<script src="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@9.15.10/build/highlight.min.js"></script>
 		<script src="//cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.0/clipboard.min.js"></script>
 		<script>
@@ -19,6 +25,27 @@ if($_GET['action'] == 'delete'){
 			tabReplace: '    '
 		})
 		hljs.initHighlightingOnLoad();
+		</script>
+		<script>
+var night = false;
+function ChangeStyle(){
+	var e = document.getElementById("style");
+	var s = document.getElementById("view").children[0];
+	var b = document.getElementsByTagName("body")[0];
+	console.log(b);
+	if(!night){
+		e.setAttribute("href","//cdn.jsdelivr.net/gh/highlightjs/cdn-release@9.15.10/build/styles/tomorrow-night-eighties.min.css");
+		s.setAttribute("class","fa fa-sun-o");
+		b.setAttribute("class","bd-dark");
+		night = true;
+	}
+	else{
+		e.setAttribute("href","//cdn.jsdelivr.net/gh/highlightjs/cdn-release@9.15.10/build/styles/solarized-light.min.css");
+		s.setAttribute("class","fa fa-moon-o");
+		b.setAttribute("class","bd-light");
+		night = false;
+	}
+}
 		</script>
 		<style>
 		code:hover
@@ -52,8 +79,10 @@ if($_GET['action'] == 'delete'){
 			background-color: white;
 			border: 2px solid #4CAF50; /* Green */
 			border-radius: 4px;
-			color: white;
-			padding: 12px 16px;
+			color: black;
+			/*padding: 12px 16px;*/
+			width: 70px;
+			height: 70px;
 			text-align: center;
 			text-decoration: none;
 			display: inline-block;
@@ -86,16 +115,30 @@ if($_GET['action'] == 'delete'){
 		#home
 		{
 			position:fixed;
-			top:124px;
+			top:130px;
+			right:15px;
+		}
+		#view
+		{
+			position:fixed;
+			top:230px;
 			right:15px;
 		}
 		footer
 		{
 			align:center;
 		}
+		.bd-dark
+		{
+			background-color: gray;
+		}
+		body
+		{
+			transition-duration:0.8s;
+		}
 		</style>
 	</head>
-	<body>
+	<body class="bd-light">
 		<script>new ClipboardJS('.copy');</script>
 <div id="main">
 		<pre>
@@ -107,11 +150,8 @@ echo $file;
 ?></code>
 </pre>
 </div>
-<button id="copy" class="copy" data-clipboard-target="#code"><img src="data:image/svg+xml;base64,PHN2ZyBoZWlnaHQ9IjEwMjQiIHdpZHRoPSI4OTYiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PHBhdGggZD0iTTEyOCA3NjhoMjU2djY0SDEyOHYtNjR6IG0zMjAtMzg0SDEyOHY2NGgzMjB2LTY0eiBtMTI4IDE5MlY0NDhMMzg0IDY0MGwxOTIgMTkyVjcwNGgzMjBWNTc2SDU3NnogbS0yODgtNjRIMTI4djY0aDE2MHYtNjR6TTEyOCA3MDRoMTYwdi02NEgxMjh2NjR6IG01NzYgNjRoNjR2MTI4Yy0xIDE4LTcgMzMtMTkgNDVzLTI3IDE4LTQ1IDE5SDY0Yy0zNSAwLTY0LTI5LTY0LTY0VjE5MmMwLTM1IDI5LTY0IDY0LTY0aDE5MkMyNTYgNTcgMzEzIDAgMzg0IDBzMTI4IDU3IDEyOCAxMjhoMTkyYzM1IDAgNjQgMjkgNjQgNjR2MzIwaC02NFYzMjBINjR2NTc2aDY0MFY3Njh6TTEyOCAyNTZoNTEyYzAtMzUtMjktNjQtNjQtNjRoLTY0Yy0zNSAwLTY0LTI5LTY0LTY0cy0yOS02NC02NC02NC02NCAyOS02NCA2NC0yOSA2NC02NCA2NGgtNjRjLTM1IDAtNjQgMjktNjQgNjR6IiAvPjwvc3ZnPg=="
-width="42"
-alt="Copy to clipboard"></button>
-<button id="home" onclick="window.location.href='./'"><img src="data:image/svg+xml;base64,CjxzdmcgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIHZpZXdCb3g9IjAgMCAyNCAyNCI+PHBhdGggZD0iTTIwIDcuMDkzdi01LjA5M2gtM3YyLjA5M2wzIDN6bTQgNS45MDdsLTEyLTEyLTEyIDEyaDN2MTBoN3YtNWg0djVoN3YtMTBoM3ptLTUgOGgtM3YtNWgtOHY1aC0zdi0xMC4yNmw3LTYuOTEyIDcgNi45OXYxMC4xODJ6Ii8+PC9zdmc+"
-width="42"
-alt="Back to home"></button>
+<button id="copy" class="copy" data-clipboard-target="#code"><i class="fa fa-files-o" aria-hidden="true" style="font-size:40px;"></i></button>
+<button id="home" onclick="window.location.href='./'"><i class="fa fa-home" aria-hidden="true"  style="font-size:40px;"></i></button>
+<button id="view" onclick="ChangeStyle()"><i class="fa fa-moon-o" aria-hidden="true"  style="font-size:40px;"></i></button>
 	</body>
 </html>
