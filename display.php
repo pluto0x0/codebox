@@ -16,7 +16,7 @@ if($_GET['action'] == 'delete'){
 		Solarized Light
 		Tomorrow Night Eighties
 		--->
-		<link rel="stylesheet" href="https://cdn.staticfile.org/font-awesome/4.7.0/css/font-awesome.css">
+		<link rel="stylesheet" href="//cdn.staticfile.org/font-awesome/4.7.0/css/font-awesome.css">
 		<link id="style" rel="stylesheet" href="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@9.15.10/build/styles/solarized-light.min.css"/>
 		<script src="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@9.15.10/build/highlight.min.js"></script>
 		<script src="//cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.0/clipboard.min.js"></script>
@@ -32,7 +32,7 @@ function ChangeStyle(){
 	var e = document.getElementById("style");
 	var s = document.getElementById("view").children[0];
 	var b = document.getElementsByTagName("body")[0];
-	console.log(b);
+	//console.log(b);
 	if(!night){
 		e.setAttribute("href","//cdn.jsdelivr.net/gh/highlightjs/cdn-release@9.15.10/build/styles/tomorrow-night-eighties.min.css");
 		s.setAttribute("class","fa fa-sun-o");
@@ -139,7 +139,10 @@ function ChangeStyle(){
 		</style>
 	</head>
 	<body class="bd-light">
-		<script>new ClipboardJS('.copy');</script>
+		<script>var clipboard = new ClipboardJS('.copy');
+		clipboard.on('error', function(e) {
+    alert("复制失败，请按 Ctrl-C !");
+});</script>
 <div id="main">
 		<pre>
 			<code id="code"><?php
