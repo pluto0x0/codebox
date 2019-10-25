@@ -17,6 +17,7 @@ if($_GET['action'] == 'delete'){
 		Tomorrow Night Eighties
 		--->
 		<link rel="stylesheet" href="//cdn.staticfile.org/font-awesome/4.7.0/css/font-awesome.css">
+		<link rel="stylesheet" href="css/display.min.css">
 		<link id="style" rel="stylesheet" href="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@9.15.10/build/styles/solarized-light.min.css"/>
 		<script src="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@9.15.10/build/highlight.min.js"></script>
 		<script src="//cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.0/clipboard.min.js"></script>
@@ -47,111 +48,6 @@ function ChangeStyle(){
 	}
 }
 		</script>
-		<style>
-		::selection {
-			background:#82E0AA ; 
-			color:white;
-		}
-
-		::-moz-selection {
-			background:#82E0AA ; 
-			color:white;
-		}
-
-		::-webkit-selection {
-			background:#82E0AA ; 
-			color:white;
-		}
-		
-		code:hover
-		{
-			transition-duration:0.3s;
-			box-shadow: 0px 16px 32px 0px rgba(0,0,0,0.4);
-		}
-		code:active
-		{
-			transition-duration:0.4s;
-			box-shadow: 0px 32px 64px 0px rgba(0,0,0,0.4);
-		}
-		pre
-		{
-			white-space: pre-wrap;
-			word-wrap: break-word;
-		}
-		code
-		{
-			max-width: 90%;
-			transition-duration:0.2s;
-			border-radius:10px;
-			box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.4);
-			position:absolute;
-			left:5%;
-			top:5%;
-		}
-		button
-		{
-			transition-duration:0.3s;
-			background-color: white;
-			border: 2px solid #4CAF50; /* Green */
-			border-radius: 4px;
-			color: black;
-			/*padding: 12px 16px;*/
-			width: 70px;
-			height: 70px;
-			text-align: center;
-			text-decoration: none;
-			display: inline-block;
-			font-size: 16px;
-			box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2), 0 3px 10px 0 rgba(0,0,0,0.19);
-			
-		}
-		button:hover{
-			transition-duration:0.3s;
-			box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
-			background-color: #4CAF50; /* Green */
-			color: white;
-		}
-		@font-face
-		{
-			font-family:"Consola";
-			src:url("font/consola.ttf") format('truetype');
-　　	}
-		code
-		{
-			font-family:"Consola";
-			font-size:20px;
-		}
-		#copy
-		{
-			position:fixed;
-			top:30px;
-			right:15px;
-		}
-		#home
-		{
-			position:fixed;
-			top:130px;
-			right:15px;
-		}
-		#view
-		{
-			position:fixed;
-			top:230px;
-			right:15px;
-		}
-		footer
-		{
-			align:center;
-		}
-		.bd-dark
-		{
-			background-color: gray;
-		}
-		body
-		{
-			transition-duration:0.8s;
-		}
-		</style>
 	</head>
 	<body class="bd-light">
 		<script>var clipboard = new ClipboardJS('.copy');
