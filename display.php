@@ -48,6 +48,21 @@ function ChangeStyle(){
 }
 		</script>
 		<style>
+		::selection {
+			background:#82E0AA ; 
+			color:white;
+		}
+
+		::-moz-selection {
+			background:#82E0AA ; 
+			color:white;
+		}
+
+		::-webkit-selection {
+			background:#82E0AA ; 
+			color:white;
+		}
+		
 		code:hover
 		{
 			transition-duration:0.3s;
